@@ -44,3 +44,5 @@ void writeDigitalU8(uInt32 port, uInt8 data);
 
 
 void closeChannels();
+
+void stop_mg_server();

@@ -111,7 +111,246 @@ int getXDirection() {
 // Y Axis
 //************************************************//
 
+void moveYInside()
+{
+	uInt8 p = readDigitalU8(4);
+	setBitValue(p, 3, 0);
+	setBitValue(p, 4, 1);
+	writeDigitalU8(4, p);
+}
 
+void moveYOutside()
+{
+	uInt8 p = readDigitalU8(4);
+	setBitValue(p, 4, 0);
+	setBitValue(p, 3, 1);
+	writeDigitalU8(4, p);
+}
+
+void stopY()
+{
+	uInt8 p = readDigitalU8(4);
+	setBitValue(p, 4, 0);
+	setBitValue(p, 3, 0);
+	writeDigitalU8(4, p);
+}
+
+int getYPosition()
+{
+	int port = readDigitalU8(1);
+	
+	if (!getBitValue(port, 2))
+		return 1;
+	if (!getBitValue(port, 3))
+		return 2;
+	if (!getBitValue(port, 4))
+		return 3;
+	return -1;
+}
+
+int getYDirection() {
+	uInt8 p4 = readDigitalU8(4);
+	if (getBitValue(p4, 4)) // moving inside?
+		return 1;
+	if (getBitValue(p4, 3)) // moving outside?
+		return -1;
+	return 0; // not moving.
+}
+
+//************************************************//
+// Z Axis
+//************************************************//
+
+void moveZUp()
+{
+	uInt8 p = readDigitalU8(4);
+	setBitValue(p, 6, 0);
+	setBitValue(p, 5, 1);
+	writeDigitalU8(4, p);
+}
+
+void moveZDown()
+{
+	uInt8 p = readDigitalU8(4);
+	setBitValue(p, 5, 0);
+	setBitValue(p, 6, 1);
+	writeDigitalU8(4, p);
+}
+
+void stopZ()
+{
+	uInt8 p = readDigitalU8(4);
+	setBitValue(p, 5, 0);
+	setBitValue(p, 6, 0);
+	writeDigitalU8(4, p);
+}
+
+int getZPosition()
+{
+	int pp[10] = { 1,1,1,1,1,1,1,0,0,0 };
+	int bb[10] = { 6,5,4,3,2,1,0,7,6,5 };
+	int ports[2];
+	float count = 0.5;
+	ports[0] = readDigitalU8(1);
+	ports[1] = readDigitalU8(2);
+	for (int i = 0; i < 10; i++) {
+		count += 0.5;
+		if (!getBitValue(ports[pp[i]], bb[i]))
+		{
+			return count;
+		}
+	}
+	return -1;
+}
+
+int getZDirection() {
+	uInt8 p4 = readDigitalU8(4);
+	if (getBitValue(p4, 5)) // moving up?
+		return 1;
+	if (getBitValue(p4, 6)) // moving down?
+		return -1;
+	return 0; // not moving.
+}
+
+bool isAtZUp()
+{
+	int pp[5] = { 1,1,1,0,0 };
+	int bb[5] = { 5,3,1,7,5 };
+	int ports[2];
+	ports[0] = readDigitalU8(1);
+	ports[1] = readDigitalU8(2);
+	for (int i = 0; i < 5; i++) {
+		if (!getBitValue(ports[pp[i]], bb[i]))
+		{
+			return true;
+		}
+	}
+	return false;
+}
+
+bool isAtZDown()
+{
+	int pp[5] = { 1,1,1,1,0 };
+	int bb[5] = { 6,4,2,0,6 };
+	int ports[2];
+	ports[0] = readDigitalU8(1);
+	ports[1] = readDigitalU8(2);
+	for (int i = 0; i < 5; i++) {
+		if (!getBitValue(ports[pp[i]], bb[i]))
+		{
+			return true;
+		}
+	}
+	return false;
+}
+
+//************************************************//
+// Left Station
+//************************************************//
+
+void moveLeftStationInside()
+{
+	uInt8 p4 = readDigitalU8(4);
+	uInt8 p5 = readDigitalU8(5);
+	setBitValue(p5, 0, 0);
+	setBitValue(p4, 7, 1);
+	writeDigitalU8(4, p4);
+	writeDigitalU8(5, p5);
+}
+
+void moveLeftStationOutside()
+{
+	uInt8 p4 = readDigitalU8(4);
+	uInt8 p5 = readDigitalU8(5);
+	setBitValue(p4, 7, 0);
+	setBitValue(p5, 0, 1);
+	writeDigitalU8(4, p4);
+	writeDigitalU8(5, p5);
+}
+
+void stopLeftStation()
+{
+	uInt8 p4 = readDigitalU8(4);
+	uInt8 p5 = readDigitalU8(5);
+	setBitValue(p4, 7, 0);
+	setBitValue(p5, 0, 0);
+	writeDigitalU8(4, p4);
+	writeDigitalU8(5, p5);
+}
+
+int getLeftStationDirection()
+{
+	uInt8 p4 = readDigitalU8(4);
+	if (getBitValue(p4, 7)) // moving inside?
+		return 1;
+
+	uInt8 p5 = readDigitalU8(5);
+	if (getBitValue(p5, 0)) // moving outside?
+		return -1;
+	
+	return 0; // not moving.
+}
+
+//************************************************//
+// Right Station
+//************************************************//
+
+void moveRightStationInside()
+{
+	uInt8 p5 = readDigitalU8(5);
+	setBitValue(p5, 2, 0);
+	setBitValue(p5, 1, 1);
+	writeDigitalU8(5, p5);
+}
+
+void moveRightStationOutside()
+{
+	uInt8 p5 = readDigitalU8(5);
+	setBitValue(p5, 1, 0);
+	setBitValue(p5, 2, 1);
+	writeDigitalU8(5, p5);
+}
+
+void stopRightStation()
+{
+	uInt8 p5 = readDigitalU8(5);
+	setBitValue(p5, 1, 0);
+	setBitValue(p5, 2, 0);
+	writeDigitalU8(5, p5);
+}
+
+int getRightStationDirection()
+{
+	
+	uInt8 p5 = readDigitalU8(5);
+	if (getBitValue(p5, 1)) // moving inside?
+		return 1;
+	if (getBitValue(p5, 2)) // moving outside?
+		return -1;
+
+	return 0; // not moving.
+}
+
+//************************************************//
+// Part
+//************************************************//
+
+int isPartOnLeftStation() 
+{
+	return getBitValue(3, 0);
+}
+
+int isPartOnRightStation() 
+{
+	return getBitValue(3, 1);
+}
+
+bool isPartInCage() 
+{
+	if (!getBitValue(2, 7))
+		return true;
+	return false;
+}
 
 //************************************************//
 // Menu

@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\si\\serverApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B9556F84-CF89-43CB-AE3D-F7C2CE4277ED}|serverApp.vcxproj|C:\\si\\serverApp\\serverApp.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B9556F84-CF89-43CB-AE3D-F7C2CE4277ED}|serverApp.vcxproj|solutionrelative:serverApp.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{B9556F84-CF89-43CB-AE3D-F7C2CE4277ED}|serverApp.vcxproj|C:\\si\\serverApp\\localControl.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B9556F84-CF89-43CB-AE3D-F7C2CE4277ED}|serverApp.vcxproj|solutionrelative:localControl.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B9556F84-CF89-43CB-AE3D-F7C2CE4277ED}|serverApp.vcxproj|C:\\si\\serverApp\\source\\localControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{B9556F84-CF89-43CB-AE3D-F7C2CE4277ED}|serverApp.vcxproj|solutionrelative:source\\localControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B9556F84-CF89-43CB-AE3D-F7C2CE4277ED}|serverApp.vcxproj|C:\\si\\serverApp\\localControl.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B9556F84-CF89-43CB-AE3D-F7C2CE4277ED}|serverApp.vcxproj|solutionrelative:localControl.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{B9556F84-CF89-43CB-AE3D-F7C2CE4277ED}|serverApp.vcxproj|C:\\si\\serverApp\\serverApp.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B9556F84-CF89-43CB-AE3D-F7C2CE4277ED}|serverApp.vcxproj|solutionrelative:serverApp.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\si\\serverApp\\source\\niDAQWebInterface.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:source\\niDAQWebInterface.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,41 +30,53 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "localControl.h",
-              "DocumentMoniker": "C:\\si\\serverApp\\source\\localControl.h",
-              "RelativeDocumentMoniker": "source\\localControl.h",
-              "ToolTip": "C:\\si\\serverApp\\source\\localControl.h",
-              "RelativeToolTip": "source\\localControl.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
+              "DocumentIndex": 3,
+              "Title": "niDAQWebInterface.h",
+              "DocumentMoniker": "C:\\si\\serverApp\\source\\niDAQWebInterface.h",
+              "RelativeDocumentMoniker": "source\\niDAQWebInterface.h",
+              "ToolTip": "C:\\si\\serverApp\\source\\niDAQWebInterface.h",
+              "RelativeToolTip": "source\\niDAQWebInterface.h",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAAC8AAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-16T16:48:43.991Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-16T16:58:52.168Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "serverApp.cpp",
+              "DocumentMoniker": "C:\\si\\serverApp\\serverApp.cpp",
+              "RelativeDocumentMoniker": "serverApp.cpp",
+              "ToolTip": "C:\\si\\serverApp\\serverApp.cpp",
+              "RelativeToolTip": "serverApp.cpp",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAACIAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-09-16T15:50:11.507Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "localControl.cpp",
               "DocumentMoniker": "C:\\si\\serverApp\\localControl.cpp",
               "RelativeDocumentMoniker": "localControl.cpp",
               "ToolTip": "C:\\si\\serverApp\\localControl.cpp",
               "RelativeToolTip": "localControl.cpp",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA8AAAAcAAAA",
+              "ViewState": "AQIAAM0AAAAAAAAAAAAAAPUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-09-16T16:28:17.46Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "serverApp.cpp",
-              "DocumentMoniker": "C:\\si\\serverApp\\serverApp.cpp",
-              "RelativeDocumentMoniker": "serverApp.cpp",
-              "ToolTip": "C:\\si\\serverApp\\serverApp.cpp",
-              "RelativeToolTip": "serverApp.cpp",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-16T15:50:11.507Z",
+              "DocumentIndex": 1,
+              "Title": "localControl.h",
+              "DocumentMoniker": "C:\\si\\serverApp\\source\\localControl.h",
+              "RelativeDocumentMoniker": "source\\localControl.h",
+              "ToolTip": "C:\\si\\serverApp\\source\\localControl.h",
+              "RelativeToolTip": "source\\localControl.h",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAACAAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-09-16T16:48:43.991Z",
               "EditorCaption": ""
             }
           ]

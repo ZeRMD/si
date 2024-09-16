@@ -1,2 +1,4 @@
-﻿  niDAQWebInterface.cpp
+﻿  localControl.cpp
+  serverApp.cpp
+  Gerando Código...
   serverApp.vcxproj -> C:\si\serverApp\x64\Debug\serverApp.exe

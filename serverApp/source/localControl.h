@@ -9,7 +9,7 @@ int getXDirection(); // returns: -1 (moving left), 0 (stopped), or 1 (moving rig
 void stopX();
 void moveXLeft();
 void moveXRight();
-int getYPosition(); // returns: 1 , 2 , 3 or -1 (not in a position)
+int getYPosition(); // returns: 1 (Atrás / Fora), 2 (Meio / Dentro), 3 (Frente / Fora) or -1 (not in a position)
 void moveYInside();
 void moveYOutside();
 void stopY();
