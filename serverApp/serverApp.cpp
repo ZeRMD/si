@@ -10,6 +10,8 @@
 #include <localControl.h>
 #include <niDAQWebInterface.h>
 
+#include <MQTT_client.h>
+
 int main()
 {
 	printf("Welcome to Intelligent Supervision\n");
@@ -18,6 +20,10 @@ int main()
 	configure_simulator_server();
 	start_mg_server();
 	initializeHardwarePorts();
+
+	startMQTTActuatorsOperation();
+
+	startMQTTSensorsOperation();
 
 	int keyboard = 0;
 	showLocalMenu();

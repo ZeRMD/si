@@ -185,7 +185,7 @@ void stopZ()
 	writeDigitalU8(4, p);
 }
 
-int getZPosition()
+float getZPosition()
 {
 	int pp[10] = { 1,1,1,1,1,1,1,0,0,0 };
 	int bb[10] = { 6,5,4,3,2,1,0,7,6,5 };
@@ -358,11 +358,11 @@ bool isPartInCage()
 
 void showStates() {
 	printf("\nX:\t\t position(%d), direction(%d) ", getXPosition(), getXDirection());
-	// printf("\nZ:\t\t position(%d), direction(%d) ", getZPosition(), getZDirection());
-	// printf("\nY:\t\t position(%d), direction(%d) ", getYPosition(), getYDirection());
-	// printf("\nleftStation..:\t has_part(%d), direction(%d) ", isPartOnLeftStation(),getLeftStationDirection());
-	// printf("\nrightStation.:\t has_part(%d), direction(%d) ", isPartOnRightStation(), getRightStationDirection());
-	// printf("\nCAGE:\t\t has_part(%d)", isPartInCage());
+	printf("\nZ:\t\t position(%d), direction(%d) ", getZPosition(), getZDirection());
+	printf("\nY:\t\t position(%d), direction(%d) ", getYPosition(), getYDirection());
+	printf("\nleftStation..:\t has_part(%d), direction(%d) ", isPartOnLeftStation(),getLeftStationDirection());
+	printf("\nrightStation.:\t has_part(%d), direction(%d) ", isPartOnRightStation(), getRightStationDirection());
+	printf("\nCAGE:\t\t has_part(%d)", isPartInCage());
 }
 
 void showLocalMenu() {
@@ -383,18 +383,18 @@ void executeLocalControl(int keyboard) {
 	case 'q': moveXRight(); break;
 	case 'z': moveXLeft(); break;
 	case 'a': stopX(); break;
-		//case 'e': moveYInside(); break;
-		//case 'c': moveYOutside(); break;
-		//case 'd': stopY(); break;
-		//case 'w': moveZUp(); break;
-		//case 'x': moveZDown(); break;
-		//case 's': stopZ(); break;
-		//case 'r': moveLeftStationInside(); break;
-		//case 'v': moveLeftStationOutside(); break;
-		//case 'f': stopLeftStation(); break;
-		//case 't': moveRightStationInside(); break;
-		//case 'b': moveRightStationOutside(); break;
-		//case 'g': stopRightStation(); break;
+	case 'e': moveYInside(); break;
+	case 'c': moveYOutside(); break;
+	case 'd': stopY(); break;
+	case 'w': moveZUp(); break;
+	case 'x': moveZDown(); break;
+	case 's': stopZ(); break;
+	case 'r': moveLeftStationInside(); break;
+	case 'v': moveLeftStationOutside(); break;
+	case 'f': stopLeftStation(); break;
+	case 't': moveRightStationInside(); break;
+	case 'b': moveRightStationOutside(); break;
+	case 'g': stopRightStation(); break;
 	case 'p': showPortsInformation(); break;
 	case 'm': showLocalMenu(); break;
 	case 'k': showStates(); break;
