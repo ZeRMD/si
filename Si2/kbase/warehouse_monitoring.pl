@@ -27,7 +27,14 @@ client_monitoring_on_message_arrived(Topic, Message, _Handler):-
     StringValue = JsonDict.value,
     number_string(NumberValue, StringValue),
     atom_string(AtomName, StringName),
-    assert_fact(Topic,AtomName, NumberValue).
+    (
+        assert_fact(Topic,AtomName, NumberValue),
+        !;
+        format('Monitoring: Please, specify assert_fact predicate for message {name:~w, value:~w}~n',[AtomName, NumberValue]),
+        true
+    ),
+    forward.
+
 
 % X AXIS
 assert_fact(sensor, x_is_at, -1):-
@@ -74,10 +81,24 @@ assert_fact(sensor, z_direction, Direction):-
 assert_fact(sensor, ls_has_part, Has):-
     assert_state(ls_has_part(Has)).
 
+assert_fact(sensor, ls_direction, Direction):-
+    assert_state(ls_direction(Direction)).
+
+assert_fact(sensor, ls_direction, 0):-
+    retract_state( ls_direction(_)),
+    !.
+
 % Right Station
 
 assert_fact(sensor, rs_has_part, Has):-
     assert_state(rs_has_part(Has)).
+
+assert_fact(sensor, rs_direction, Direction):-
+    assert_state(rs_direction(Direction)).
+
+assert_fact(sensor, rs_direction, 0):-
+    retract_state( rs_direction(_)),
+    !.
 
 % Cage
 

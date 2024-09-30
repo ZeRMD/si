@@ -76,6 +76,7 @@ solve([], W0, W0, _,[], _):-
 solve(Goals, W0, W0, _,[], _):-
     %ground_list(W0,Goals, Goals2),
     holds(Goals, W0),
+    % writeln(holds(Goals)),
     %forall(member(G, Goals2), member(G, W0)),
     !.
 
@@ -139,21 +140,20 @@ solve(Goals,W0, W3, Forbidden, Plan, Domain):-
     solve(PrecList, W0, W1,[Operator|Forbidden], Plan_for_Precedences, Domain),
 
     %test if Action can still be done after getting plan for preconditions.
+    /*
     (
       subset(PrecList, W1)
       ;
-/*
-      writeln(lllllllllllllll),
-      [seq(List)]=PrecList,
-      writeln(seq(List)),
-      is_list(List),
-      */
        [SequenceTermOrList] = PrecList,
        SequenceTermOrList   =.. [seq | List], % send sequencia, as precedences ja foram verificadas antes, no solve normal
        filter_contradictory_states(List, List_Clean),
-       subset(List_Clean, W1)
+       subtract_set(List_Clean, [wait(_), clear(_)], List_Clean_no_waits),
+       subset(List_Clean_no_waits, W1)
     ),
+    */
 
+
+    ground(PrecList),
 
     do(Action, W1, W2, Plan_for_Precedences),
 
@@ -166,6 +166,17 @@ solve(Goals,W0, W3, Forbidden, Plan, Domain):-
 
     append([Plan_for_Precedences, Operator, Plan_for_remaining_goals ], Plan).
     %append([Plan_for_Precedences,[wait_for_all(PrecList), Operator], Plan_for_remaining_goals ], Plan).
+
+
+member_of_world(Fact):-
+  world(World, _),
+  member(Fact, World).
+
+
+member_of_goals(Fact):-
+  goals(Goals),
+  member(Fact, Goals).
+
 
 
 % se o Domain não estiver instanciada, então são unificadas.
@@ -333,22 +344,39 @@ get_a_goal(Goal, Goals, Remaining_goals):-
 */
 
 
-do(Action, W1, W3, _PreviousPlan):-
+do(Action, W1, W4, _PreviousPlan):-
    %writeln(do(Action)),
    strips(Spec_List) = Action,
    not(  member(partial(_List), Spec_List)),
    member(add AddList, Spec_List),
    member(del DelList, Spec_List),
-   subtract_set(W1, DelList, W2),
-   append(W2,AddList, W3).
 
-do(Action, W1, W3, _PreviousPlan):-
+   subtract_set(W1, DelList, W2),
+   append(W2,AddList, W3),
+   (
+       member(effect EffectList, Spec_List),
+       subtract_set(EffectList, W3, EffectList2),
+       %writeln(subtract_set(EffectList, W3, EffectList2)),
+       append(W3,EffectList2, W4),
+       !;
+       W4 = W3
+   ).
+
+do(Action, W1, W4, _PreviousPlan):-
    strips(Spec_List) = Action,
    member(partial(ListPartial), Spec_List),
    %writeln(partial(ListPartial)),
- partial [x_is_at(X), z_is_at(Z)]   member(del DelList, Spec_List),
+   member(del DelList, Spec_List),
    subtract_set(W1, DelList, W2),
-   append(W2,ListPartial, W3).
+   append(W2,ListPartial, W3),
+   (
+       member(effect EffectList, Spec_List),
+       subtract_set(EffectList,W3, EffectList2),
+       append(W3,EffectList2, W4),
+       !
+       ;
+       W4 = W3
+   ).
 
 
 

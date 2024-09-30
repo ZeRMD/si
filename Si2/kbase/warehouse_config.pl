@@ -14,6 +14,9 @@
 
 :-dynamic goal/2.  % to represent goal(x_is_at(2), 33133).
 
+%aula 3 (adicionar os planos)
+:-dynamic plan/2. % representa os planos e composto por um nome e uma lista de acoes
+
 assert_state(NewState):-
      get_time(TimeStamp),
      assert_before_state(NewState),
