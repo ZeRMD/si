@@ -146,7 +146,7 @@ int onMqttActuatorsMessageArrived(void* context, char* topicName, int messageLen
             // Control logic for the actuator left station
             //*****************************************//
 
-            if (name == "left_station") { // the class string has got operator ==
+            if (name == "motor_ls") { // the class string has got operator ==
                 int direction = std::stoi(value);  // Convert value to an integer
                 if (direction == 0) { stopLeftStation(); } // if 
                 if (direction == 1) { moveLeftStationInside(); } // else if
@@ -157,7 +157,7 @@ int onMqttActuatorsMessageArrived(void* context, char* topicName, int messageLen
             // Control logic for the actuator right station
             //*****************************************//
 
-            if (name == "right_station") { // the class string has got operator ==
+            if (name == "motor_rs") { // the class string has got operator ==
                 int direction = std::stoi(value);  // Convert value to an integer
                 if (direction == 0) { stopRightStation(); } // if 
                 if (direction == 1) { moveRightStationInside(); } // else if
@@ -231,7 +231,7 @@ void monitorXAxis(MqttClientManager& mqttClientManager) {
         previous_axis_position = axisPosition;
         lastTime = currentTime;
         mqttClientManager.publish(message, "sensor", QOS_1, NULL, NULL);
-        sprintf(message, "{\"name\": \"x_direction\", \"value\": \"%d\"}", axisMoving);
+        sprintf(message, "{\"name\": \"x_moving\", \"value\": \"%d\"}", axisMoving);
         mqttClientManager.publish(message, "sensor", QOS_1, NULL, NULL);
         previous_axis_moving = axisMoving;
     }
@@ -257,7 +257,7 @@ void monitorYAxis(MqttClientManager& mqttClientManager) {
         previous_axis_position = axisPosition;
         lastTime = currentTime;
         mqttClientManager.publish(message, "sensor", QOS_1, NULL, NULL);
-        sprintf(message, "{\"name\": \"y_direction\", \"value\": \"%d\"}", axisMoving);
+        sprintf(message, "{\"name\": \"y_moving\", \"value\": \"%d\"}", axisMoving);
         mqttClientManager.publish(message, "sensor", QOS_1, NULL, NULL);
         previous_axis_moving = axisMoving;
     }
@@ -284,7 +284,7 @@ void monitorZAxis(MqttClientManager& mqttClientManager) {
         previous_axis_position = axisPosition;
         lastTime = currentTime;
         mqttClientManager.publish(message, "sensor", QOS_1, NULL, NULL);
-        sprintf(message, "{\"name\": \"z_direction\", \"value\": \"%d\"}", axisMoving);
+        sprintf(message, "{\"name\": \"z_moving\", \"value\": \"%d\"}", axisMoving);
         mqttClientManager.publish(message, "sensor", QOS_1, NULL, NULL);
         previous_axis_moving = axisMoving;
     }
@@ -310,7 +310,7 @@ void monitorLeftStation(MqttClientManager& mqttClientManager) {
         previous_station_position = stationPosition;
         lastTime = currentTime;
         mqttClientManager.publish(message, "sensor", QOS_1, NULL, NULL);
-        sprintf(message, "{\"name\": \"ls_direction\", \"value\": \"%d\"}", stationMoving);
+        sprintf(message, "{\"name\": \"ls_moving\", \"value\": \"%d\"}", stationMoving);
         mqttClientManager.publish(message, "sensor", QOS_1, NULL, NULL);
         previous_station_moving = stationMoving;
     }
@@ -336,7 +336,7 @@ void monitorRightStation(MqttClientManager& mqttClientManager) {
         previous_station_position = stationPosition;
         lastTime = currentTime;
         mqttClientManager.publish(message, "sensor", QOS_1, NULL, NULL);
-        sprintf(message, "{\"name\": \"rs_direction\", \"value\": \"%d\"}", stationMoving);
+        sprintf(message, "{\"name\": \"rs_moving\", \"value\": \"%d\"}", stationMoving);
         mqttClientManager.publish(message, "sensor", QOS_1, NULL, NULL);
         previous_station_moving = stationMoving;
     }

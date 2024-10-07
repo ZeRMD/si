@@ -220,3 +220,9 @@ defrule([name: plan_with_sub_plan_rule],
 % assert( plan(xz_move, [plan(xx_move, [ (motor_x, 1), delay(xd, 2), (motor_x, 0)  ]), plan(zz_move, [   (motor_z, 1),   delay(zd, 2),   (motor_z, 0)   ]) ])), forward.
 % Este anda na diagonal em x e z no sentido positivo de ambos por 2
 % segundos com delay.
+% O proximo e fixe, e um plano com 2 planos um para mexer x e outro para
+% mexer z para a pos (3,3)
+% assert( plan(goto_xz, [plan(goto_x, [ (motor_x,1), wait( x_is_at(3) ), (motor_x,0)]), plan(goto_z, [(motor_z,1), wait(z_is_at(3.0)), (motor_z,0)]) ])), forward.
+% Tambem se pode fazer chamando 2 planos em separado como esta em baixo
+% assert(plan(goto_x, [(motor_x,1), wait( x_is_at(5) ), (motor_x,0)])), assert(plan(goto_z, [(motor_z,1), wait(z_is_at(5.0)), (motor_z,0)])), forward.
+

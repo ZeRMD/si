@@ -45,12 +45,8 @@ assert_fact(sensor, x_is_at, Position):-
     assert_state( x_is_at(Position)).
 
 
-assert_fact(sensor, x_direction, Direction):-
-    assert_state(x_direction(Direction)).
-
-assert_fact(sensor, x_direction, 0):-
-    retract_state( x_direction(_)),
-    !.
+assert_fact(sensor, x_moving, Direction):-
+    assert_state(x_moving(Direction)).
 
 % Y AXIS
 assert_fact(sensor, y_is_at, -1):-
@@ -61,11 +57,11 @@ assert_fact(sensor, y_is_at, Position):-
     assert_state( y_is_at(Position)).
 
 
-assert_fact(sensor, y_direction, Direction):-
-    assert_state(y_direction(Direction)).
+assert_fact(sensor, y_moving, Direction):-
+    assert_state(y_moving(Direction)).
 
 % Z AXIS
-assert_fact(sensor, z_is_at, -1):-
+assert_fact(sensor, z_is_at, -1.0):-
     retract_state( z_is_at(_)),
     !.
 
@@ -73,36 +69,48 @@ assert_fact(sensor, z_is_at, Position):-
     assert_state( z_is_at(Position)).
 
 
-assert_fact(sensor, z_direction, Direction):-
-    assert_state(z_direction(Direction)).
+assert_fact(sensor, z_moving, Direction):-
+    assert_state(z_moving(Direction)).
 
 
 % Left Station
+assert_fact(sensor, ls_has_part, 0):-
+    retract_state( ls_has_part(_)),
+    !.
+
 assert_fact(sensor, ls_has_part, Has):-
     assert_state(ls_has_part(Has)).
 
-assert_fact(sensor, ls_direction, Direction):-
-    assert_state(ls_direction(Direction)).
-
-assert_fact(sensor, ls_direction, 0):-
-    retract_state( ls_direction(_)),
+assert_fact(sensor, ls_moving, 0):-
+    retract_state( ls_moving(_)),
     !.
 
+assert_fact(sensor, ls_moving, Direction):-
+    assert_state(ls_moving(Direction)).
+
 % Right Station
+assert_fact(sensor, rs_has_part, 0):-
+    retract_state( rs_has_part(_)),
+    !.
 
 assert_fact(sensor, rs_has_part, Has):-
     assert_state(rs_has_part(Has)).
 
-assert_fact(sensor, rs_direction, Direction):-
-    assert_state(rs_direction(Direction)).
 
-assert_fact(sensor, rs_direction, 0):-
-    retract_state( rs_direction(_)),
+assert_fact(sensor, rs_moving, 0):-
+    retract_state( rs_moving(_)),
+    !.
 
+assert_fact(sensor, rs_moving, Direction):-
+    assert_state(rs_moving(Direction)).
 % Cage
 
+assert_fact(sensor, part_in_cage, 0):-
+    retract_state( part_in_cage(_)),
+    !.
+
 assert_fact(sensor, part_in_cage, Is):-
-    assert_state(part_in_cage(Is)).
+    assert_state(part_in_cage).
 
 
 

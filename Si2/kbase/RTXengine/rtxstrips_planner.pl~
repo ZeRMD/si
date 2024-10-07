@@ -9,7 +9,7 @@
 :-dynamic pre_conditions/1.
 :-dynamic heap/1.
 :-dynamic goals/1.
-:-dynamic plan/1.
+:-dynamic plan/2.
 
 :-op(900, fy, act).
 :-op(900, fy, pre).
@@ -112,8 +112,19 @@ solve(Goals,W0, W3, Forbidden, Plan, Domain):-
 
     %writeln(next____goal(Goal)),
 
-    achieves(Action, Goal),
-
+    % achieves(Action,Goal),
+    achieves(Goal, ListOfActions),
+    member(Action, ListOfActions),
+/*
+    (   ListOfActions \= [],
+         member(Action, ListOfActions), !
+    ;
+         clause(strips(List_Spec), _),
+         member(add  Add, List_Spec),
+         member(Goal, Add),
+        Action = strips(List_Spec)
+    ),
+*/
     % se o Domain não estiver instanciada, então são unificadas.
     % Em caso disso, Domain assume o valor que está nessa accao
     same_domain(Action, Domain),
@@ -128,10 +139,13 @@ solve(Goals,W0, W3, Forbidden, Plan, Domain):-
 
     %(   member( condition [CondList], Spec_list), CondList, ! ; true),
 
+
         retractall(world(_,_)),
         assert(world(W0, AddList)),
         retractall(pre_conditions(_)),
         assert(pre_conditions(PrecList)),
+        retractall(goals(_)),
+        assert(goals(Goals)),
         %unify_Pre_with_World(PrecList, W0), % !!! magics here
         Action,                             % CHAMADA AO CORPO
 
@@ -224,10 +238,19 @@ test([G|Goals]):-
     test(Goals).
 
 
-achieves(strips(List_spec), G):-
-    clause(strips(List_spec), _BODY),
-    member(add AddList, List_spec),
-    holds(G, AddList).
+achieves(G, ListOfActions):-
+    findall( (Priority, strips(List_spec)),
+    (
+      clause(strips(List_spec), _BODY),
+      member(add AddList, List_spec),
+      (   member(priority(Priority), List_spec),!; Priority = 0),
+
+      holds(G, AddList)
+      %member(G, AddList)
+     ),
+    List),
+    sort(1, '@>=', List, List2),
+    findall(Action,  member( (_P, Action), List2), ListOfActions).
 
 
 % se são sequencias, ja houve verificação do hold nas chamadas

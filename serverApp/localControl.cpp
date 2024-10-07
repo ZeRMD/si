@@ -335,21 +335,22 @@ int getRightStationDirection()
 // Part
 //************************************************//
 
-int isPartOnLeftStation() 
+int isPartOnLeftStation()
 {
-	return getBitValue(3, 0);
+	uInt8 p3 = readDigitalU8(3);
+	return getBitValue(p3, 0);
 }
 
-int isPartOnRightStation() 
+int isPartOnRightStation()
 {
-	return getBitValue(3, 1);
+	uInt8 p3 = readDigitalU8(3);
+	return getBitValue(p3, 1);
 }
 
-bool isPartInCage() 
+bool isPartInCage()
 {
-	if (!getBitValue(2, 7))
-		return true;
-	return false;
+	uInt8 p2 = readDigitalU8(2);
+	return getBitValue(p2, 7);
 }
 
 //************************************************//

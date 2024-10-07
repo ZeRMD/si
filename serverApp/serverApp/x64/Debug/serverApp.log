@@ -1,3 +1,2 @@
-﻿  localControl.cpp
-C:\si\serverApp\localControl.cpp(361,9): warning C4477: 'printf': a cadeia de formato '%d' requer um argumento do tipo 'int', mas um argumento variadic 1 tem o tipo 'double'
+﻿  MQTT_client.cpp
   serverApp.vcxproj -> C:\si\serverApp\x64\Debug\serverApp.exe

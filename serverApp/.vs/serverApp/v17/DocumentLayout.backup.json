@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{B9556F84-CF89-43CB-AE3D-F7C2CE4277ED}|serverApp.vcxproj|solutionrelative:source\\MQTT_client.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B9556F84-CF89-43CB-AE3D-F7C2CE4277ED}|serverApp.vcxproj|C:\\si\\serverApp\\source\\localControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B9556F84-CF89-43CB-AE3D-F7C2CE4277ED}|serverApp.vcxproj|solutionrelative:source\\localControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B9556F84-CF89-43CB-AE3D-F7C2CE4277ED}|serverApp.vcxproj|C:\\si\\serverApp\\localControl.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{B9556F84-CF89-43CB-AE3D-F7C2CE4277ED}|serverApp.vcxproj|solutionrelative:localControl.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9556F84-CF89-43CB-AE3D-F7C2CE4277ED}|serverApp.vcxproj|C:\\si\\serverApp\\source\\localControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B9556F84-CF89-43CB-AE3D-F7C2CE4277ED}|serverApp.vcxproj|solutionrelative:source\\localControl.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B9556F84-CF89-43CB-AE3D-F7C2CE4277ED}|serverApp.vcxproj|C:\\si\\serverApp\\serverApp.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -56,7 +56,7 @@
               "RelativeDocumentMoniker": "source\\MQTT_client.cpp",
               "ToolTip": "C:\\si\\serverApp\\source\\MQTT_client.cpp",
               "RelativeToolTip": "source\\MQTT_client.cpp",
-              "ViewState": "AgIAACYBAAAAAAAAAAAAAO4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACQBAACgmJmZmRklwD4BAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-09-23T16:10:28.571Z",
               "EditorCaption": ""
@@ -87,19 +87,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "localControl.cpp",
               "DocumentMoniker": "C:\\si\\serverApp\\localControl.cpp",
               "RelativeDocumentMoniker": "localControl.cpp",
               "ToolTip": "C:\\si\\serverApp\\localControl.cpp",
               "RelativeToolTip": "localControl.cpp",
-              "ViewState": "AgIAADkBAADAzMzMzMwgwFEBAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAADABAAAAMjMzMzMbwFwBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-16T16:28:17.46Z"
+              "WhenOpened": "2024-09-16T16:28:17.46Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "localControl.h",
               "DocumentMoniker": "C:\\si\\serverApp\\source\\localControl.h",
               "RelativeDocumentMoniker": "source\\localControl.h",
@@ -107,7 +108,8 @@
               "RelativeToolTip": "source\\localControl.h",
               "ViewState": "AgIAAA8AAABgZmZmZmYkwBUAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-16T16:48:43.991Z"
+              "WhenOpened": "2024-09-16T16:48:43.991Z",
+              "EditorCaption": ""
             }
           ]
         }

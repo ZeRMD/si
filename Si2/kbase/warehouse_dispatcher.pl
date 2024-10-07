@@ -65,7 +65,7 @@ defrule([name: empty_plan_rule],
 % Vamos apanhar as acoes que sao de mandar o sistema mexer aka
 % assert command, desta maneira nao precisamos de ter dentro do plan uma
 % acao mesmo assert_command e podemos mandar so o facto
-actuators_list([ (motor_x, _), (motor_y,_), (motor_z,_), (ls, _), (rs,_) ]).
+actuators_list([ (motor_x, _), (motor_y,_), (motor_z,_), (motor_ls, _), (motor_rs,_) ]).
 
 defrule([name: rule_execute_actuator_command, priority:10],
     if plan(Ref,  [Command|ListOfActions])
