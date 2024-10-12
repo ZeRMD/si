@@ -54,6 +54,7 @@ send_pending_commands :-
 
 %******************************************************%
 %Se o plano tiver acabado BO, fim
+
 defrule([name: empty_plan_rule],
     if plan(Ref,    [   ]    )  then [    %retract finished/empty
        retractall(plan(Ref,[])),          %plans

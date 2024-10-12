@@ -74,12 +74,12 @@ assert_fact(sensor, z_moving, Direction):-
 
 
 % Left Station
-assert_fact(sensor, ls_has_part, 0):-
-    retract_state( ls_has_part(_)),
+assert_fact(sensor,ls_has_part, 0):-
+    retract_state(part_at_ls),
     !.
 
-assert_fact(sensor, ls_has_part, Has):-
-    assert_state(ls_has_part(Has)).
+assert_fact(sensor, ls_has_part, 1):-
+    assert_state(part_at_ls).
 
 assert_fact(sensor, ls_moving, 0):-
     retract_state( ls_moving(_)),
@@ -90,11 +90,11 @@ assert_fact(sensor, ls_moving, Direction):-
 
 % Right Station
 assert_fact(sensor, rs_has_part, 0):-
-    retract_state( rs_has_part(_)),
+    retract_state(part_at_rs),
     !.
 
-assert_fact(sensor, rs_has_part, Has):-
-    assert_state(rs_has_part(Has)).
+assert_fact(sensor, rs_has_part, 1):-
+    assert_state(part_at_rs).
 
 
 assert_fact(sensor, rs_moving, 0):-

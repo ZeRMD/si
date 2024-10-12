@@ -56,7 +56,7 @@
               "RelativeDocumentMoniker": "source\\MQTT_client.cpp",
               "ToolTip": "C:\\si\\serverApp\\source\\MQTT_client.cpp",
               "RelativeToolTip": "source\\MQTT_client.cpp",
-              "ViewState": "AgIAACQBAACgmJmZmRklwD4BAAA+AAAAAAAAAA==",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAgwFwAAABtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-09-23T16:10:28.571Z",
               "EditorCaption": ""
@@ -93,10 +93,9 @@
               "RelativeDocumentMoniker": "localControl.cpp",
               "ToolTip": "C:\\si\\serverApp\\localControl.cpp",
               "RelativeToolTip": "localControl.cpp",
-              "ViewState": "AgIAADABAAAAMjMzMzMbwFwBAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADsAAAAAAAAAAAAAAGMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-16T16:28:17.46Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-16T16:28:17.46Z"
             },
             {
               "$type": "Document",
@@ -108,8 +107,7 @@
               "RelativeToolTip": "source\\localControl.h",
               "ViewState": "AgIAAA8AAABgZmZmZmYkwBUAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-16T16:48:43.991Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-16T16:48:43.991Z"
             }
           ]
         }

@@ -103,11 +103,12 @@ int onMqttActuatorsMessageArrived(void* context, char* topicName, int messageLen
         try {
             json jsonMessage = json::parse(payload);
 
+            printf(payload);
+
             std::string name = jsonMessage["name"];
             std::string value = jsonMessage["value"];
 
             printf("\nParsed JSON - name: %s, value: %s", name.c_str(), value.c_str());
-
 
             //*****************************************//
             // Control logic for the actuator motor_x
