@@ -253,8 +253,9 @@ strips([
              cage_at(1,1.0),
              wait(x_is_at(1)),
              wait(z_is_at(1.0)),
-             z_is_at(1.0), z_moving(0),
              y_is_at(1),   y_moving(0),
+             % wait(part_at_ls),
+             part_at_ls,
              z_is_at(1.5), z_moving(0),
              y_is_at(2),   y_moving(0),
              z_is_at(1.0), z_moving(0)
